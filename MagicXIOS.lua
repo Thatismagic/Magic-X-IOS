@@ -9,6 +9,7 @@ G2L["1"]["ResetOnSpawn"] = false;
 
 -- StarterGui.MagicXIOSGui.MagicXIOSFrame
 G2L["2"] = Instance.new("Frame", G2L["1"]);
+G2L["2"]["ZIndex"] = 10000;
 G2L["2"]["BorderSizePixel"] = 0;
 G2L["2"]["BackgroundColor3"] = Color3.fromRGB(255, 255, 255);
 G2L["2"]["Size"] = UDim2.new(0.25886, 0, 1.39695, 0);
