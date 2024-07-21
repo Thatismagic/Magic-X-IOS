@@ -1,4 +1,4 @@
--- Instances: 139 | Scripts: 19 | Modules: 0
+-- Instances: 141 | Scripts: 19 | Modules: 0
 local G2L = {};
 
 -- StarterGui.MagicXIOSGui
@@ -967,10 +967,10 @@ G2L["84"] = Instance.new("ImageLabel", G2L["1"]);
 G2L["84"]["BorderSizePixel"] = 0;
 G2L["84"]["BackgroundColor3"] = Color3.fromRGB(255, 255, 255);
 G2L["84"]["Image"] = [[rbxassetid://18585871689]];
-G2L["84"]["Size"] = UDim2.new(0, 250, 0, 250);
+G2L["84"]["Size"] = UDim2.new(0.3406, 0, 0.63613, 0);
 G2L["84"]["BorderColor3"] = Color3.fromRGB(0, 0, 0);
 G2L["84"]["Name"] = [[MagicXImageLabel]];
-G2L["84"]["Position"] = UDim2.new(0, 242, 0, 71);
+G2L["84"]["Position"] = UDim2.new(0.3297, 0, 0.18066, 0);
 
 -- StarterGui.MagicXIOSGui.MagicXImageLabel.UICorner
 G2L["85"] = Instance.new("UICorner", G2L["84"]);
@@ -1012,6 +1012,26 @@ G2L["8a"]["Color"] = ColorSequence.new{ColorSequenceKeypoint.new(0.000, Color3.f
 -- StarterGui.MagicXIOSGui.MagicXImageLabel.LocalScript
 G2L["8b"] = Instance.new("LocalScript", G2L["84"]);
 
+
+-- StarterGui.MagicXIOSGui.MagicXImageLabel.WaitLabel
+G2L["8c"] = Instance.new("TextLabel", G2L["84"]);
+G2L["8c"]["TextWrapped"] = true;
+G2L["8c"]["BorderSizePixel"] = 0;
+G2L["8c"]["TextScaled"] = true;
+G2L["8c"]["BackgroundColor3"] = Color3.fromRGB(255, 255, 255);
+G2L["8c"]["TextSize"] = 14;
+G2L["8c"]["FontFace"] = Font.new([[rbxasset://fonts/families/FredokaOne.json]], Enum.FontWeight.Regular, Enum.FontStyle.Normal);
+G2L["8c"]["TextColor3"] = Color3.fromRGB(255, 255, 255);
+G2L["8c"]["BackgroundTransparency"] = 1;
+G2L["8c"]["Size"] = UDim2.new(0, 250, 0, 50);
+G2L["8c"]["BorderColor3"] = Color3.fromRGB(0, 0, 0);
+G2L["8c"]["Text"] = [[Please Wait For Magic X To Load..]];
+G2L["8c"]["Name"] = [[WaitLabel]];
+G2L["8c"]["Position"] = UDim2.new(0, 0, 1.032, 0);
+
+-- StarterGui.MagicXIOSGui.MagicXImageLabel.WaitLabel.UIGradient
+G2L["8d"] = Instance.new("UIGradient", G2L["8c"]);
+G2L["8d"]["Color"] = ColorSequence.new{ColorSequenceKeypoint.new(0.000, Color3.fromRGB(27, 153, 255)),ColorSequenceKeypoint.new(1.000, Color3.fromRGB(246, 0, 255))};
 
 -- StarterGui.MagicXIOSGui.MagicXIOSFrame.HomeButton.LocalScript
 local function C_9()
@@ -1341,6 +1361,7 @@ local script = G2L["8b"];
 	local text = script.Parent:WaitForChild("MagicXLabel")
 	local stroke = script.Parent:WaitForChild("UIStroke")
 	local pitch = Instance.new("PitchShiftSoundEffect")
+	local sound2 = Instance.new("Sound")
 	
 	sound.Parent = image
 	sound.SoundId = "rbxassetid://15689458836"
@@ -1396,7 +1417,7 @@ local script = G2L["8b"];
 	text.TextTransparency = 0
 	stroke.Transparency = 0
 	end
-	wait(5)
+	wait(10)
 	image.ImageTransparency = 0
 	text.TextTransparency = 0
 	stroke.Transparency = 0
@@ -1444,6 +1465,11 @@ local script = G2L["8b"];
 	frame.Visible = true
 	button.Visible = true
 	sound.Playing = false
+	sound2.Parent = image
+	sound2.SoundId = "rbxassetid://15689443663"
+	sound2.Volume = 0.85
+	sound2.Looped = true
+	sound2.Playing = true
 end;
 task.spawn(C_8b);
 
