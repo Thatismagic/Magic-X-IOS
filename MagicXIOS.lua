@@ -1,4 +1,4 @@
--- Instances: 131 | Scripts: 17 | Modules: 0
+-- Instances: 139 | Scripts: 19 | Modules: 0
 local G2L = {};
 
 -- StarterGui.MagicXIOSGui
@@ -10,6 +10,7 @@ G2L["1"]["ResetOnSpawn"] = false;
 
 -- StarterGui.MagicXIOSGui.MagicXIOSFrame
 G2L["2"] = Instance.new("Frame", G2L["1"]);
+G2L["2"]["Visible"] = false;
 G2L["2"]["ZIndex"] = 50;
 G2L["2"]["BorderSizePixel"] = 0;
 G2L["2"]["BackgroundColor3"] = Color3.fromRGB(255, 255, 255);
@@ -946,6 +947,7 @@ G2L["80"]["Size"] = UDim2.new(0, 66, 0, 62);
 G2L["80"]["BackgroundTransparency"] = 1;
 G2L["80"]["Name"] = [[MagicXIOSButton]];
 G2L["80"]["BorderColor3"] = Color3.fromRGB(0, 0, 0);
+G2L["80"]["Visible"] = false;
 G2L["80"]["Position"] = UDim2.new(0.71072, 0, 0.18761, 0);
 
 -- StarterGui.MagicXIOSGui.MagicXIOSButton.UICorner
@@ -959,6 +961,57 @@ G2L["82"] = Instance.new("LocalScript", G2L["80"]);
 -- StarterGui.MagicXIOSGui.MagicXIOSButton.DragScript
 G2L["83"] = Instance.new("LocalScript", G2L["80"]);
 G2L["83"]["Name"] = [[DragScript]];
+
+-- StarterGui.MagicXIOSGui.MagicXImageLabel
+G2L["84"] = Instance.new("ImageLabel", G2L["1"]);
+G2L["84"]["BorderSizePixel"] = 0;
+G2L["84"]["BackgroundColor3"] = Color3.fromRGB(255, 255, 255);
+G2L["84"]["Image"] = [[rbxassetid://18585871689]];
+G2L["84"]["Size"] = UDim2.new(0, 250, 0, 250);
+G2L["84"]["BorderColor3"] = Color3.fromRGB(0, 0, 0);
+G2L["84"]["Name"] = [[MagicXImageLabel]];
+G2L["84"]["Position"] = UDim2.new(0, 242, 0, 71);
+
+-- StarterGui.MagicXIOSGui.MagicXImageLabel.UICorner
+G2L["85"] = Instance.new("UICorner", G2L["84"]);
+
+
+-- StarterGui.MagicXIOSGui.MagicXImageLabel.UIStroke
+G2L["86"] = Instance.new("UIStroke", G2L["84"]);
+G2L["86"]["ApplyStrokeMode"] = Enum.ApplyStrokeMode.Border;
+G2L["86"]["Thickness"] = 5;
+G2L["86"]["Color"] = Color3.fromRGB(255, 255, 255);
+
+-- StarterGui.MagicXIOSGui.MagicXImageLabel.UIStroke.UIGradient
+G2L["87"] = Instance.new("UIGradient", G2L["86"]);
+G2L["87"]["Color"] = ColorSequence.new{ColorSequenceKeypoint.new(0.000, Color3.fromRGB(51, 163, 255)),ColorSequenceKeypoint.new(0.253, Color3.fromRGB(177, 0, 255)),ColorSequenceKeypoint.new(0.487, Color3.fromRGB(0, 226, 255)),ColorSequenceKeypoint.new(0.755, Color3.fromRGB(255, 1, 207)),ColorSequenceKeypoint.new(1.000, Color3.fromRGB(0, 30, 255))};
+
+-- StarterGui.MagicXIOSGui.MagicXImageLabel.UIStroke.UIGradient.LocalScript
+G2L["88"] = Instance.new("LocalScript", G2L["87"]);
+
+
+-- StarterGui.MagicXIOSGui.MagicXImageLabel.MagicXLabel
+G2L["89"] = Instance.new("TextLabel", G2L["84"]);
+G2L["89"]["TextWrapped"] = true;
+G2L["89"]["BorderSizePixel"] = 0;
+G2L["89"]["TextScaled"] = true;
+G2L["89"]["BackgroundColor3"] = Color3.fromRGB(255, 255, 255);
+G2L["89"]["TextSize"] = 14;
+G2L["89"]["FontFace"] = Font.new([[rbxasset://fonts/families/FredokaOne.json]], Enum.FontWeight.Regular, Enum.FontStyle.Normal);
+G2L["89"]["TextColor3"] = Color3.fromRGB(255, 255, 255);
+G2L["89"]["BackgroundTransparency"] = 1;
+G2L["89"]["Size"] = UDim2.new(0, 250, 0, 50);
+G2L["89"]["BorderColor3"] = Color3.fromRGB(0, 0, 0);
+G2L["89"]["Text"] = [[Magic X]];
+G2L["89"]["Name"] = [[MagicXLabel]];
+
+-- StarterGui.MagicXIOSGui.MagicXImageLabel.MagicXLabel.UIGradient
+G2L["8a"] = Instance.new("UIGradient", G2L["89"]);
+G2L["8a"]["Color"] = ColorSequence.new{ColorSequenceKeypoint.new(0.000, Color3.fromRGB(27, 153, 255)),ColorSequenceKeypoint.new(1.000, Color3.fromRGB(246, 0, 255))};
+
+-- StarterGui.MagicXIOSGui.MagicXImageLabel.LocalScript
+G2L["8b"] = Instance.new("LocalScript", G2L["84"]);
+
 
 -- StarterGui.MagicXIOSGui.MagicXIOSFrame.HomeButton.LocalScript
 local function C_9()
@@ -1268,5 +1321,130 @@ local script = G2L["83"];
 	script.Parent.Active = true
 end;
 task.spawn(C_83);
+-- StarterGui.MagicXIOSGui.MagicXImageLabel.UIStroke.UIGradient.LocalScript
+local function C_88()
+local script = G2L["88"];
+	local UIGradient = script.Parent
+	while true do
+		UIGradient.Rotation += 5
+		wait()
+	end
+end;
+task.spawn(C_88);
+-- StarterGui.MagicXIOSGui.MagicXImageLabel.LocalScript
+local function C_8b()
+local script = G2L["8b"];
+	local image = script.Parent
+	local frame = script.Parent.Parent:WaitForChild("MagicXIOSFrame")
+	local button = script.Parent.Parent:WaitForChild("MagicXIOSButton")
+	local sound = Instance.new("Sound")
+	local text = script.Parent:WaitForChild("MagicXLabel")
+	local stroke = script.Parent:WaitForChild("UIStroke")
+	local pitch = Instance.new("PitchShiftSoundEffect")
+	
+	sound.Parent = image
+	sound.SoundId = "rbxassetid://15689458836"
+	sound.PlaybackSpeed = 1.25
+	sound.Volume = 2.5
+	sound.Looped = true
+	pitch.Parent = sound
+	pitch.Octave = 1.25
+	
+	if image.Visible == true then
+		sound.Playing = true
+	image.ImageTransparency = 1
+	text.TextTransparency = 1
+	stroke.Transparency = 1
+	wait()
+	image.ImageTransparency = 0.9
+	text.TextTransparency = 0.9
+	stroke.Transparency = 0.9
+	wait()
+	image.ImageTransparency = 0.8
+	text.TextTransparency = 0.8
+	stroke.Transparency = 0.8
+	wait()
+	image.ImageTransparency = 0.7
+	text.TextTransparency = 0.7
+	stroke.Transparency = 0.7
+	wait()
+	image.ImageTransparency = 0.6
+	text.TextTransparency = 0.6
+	stroke.Transparency = 0.6
+	wait()
+	image.ImageTransparency = 0.5
+	text.TextTransparency = 0.5
+	stroke.Transparency = 0.5
+	wait()
+	image.ImageTransparency = 0.4
+	text.TextTransparency = 0.4
+	stroke.Transparency = 0.4
+	wait()
+	image.ImageTransparency = 0.3
+	text.TextTransparency = 0.3
+	stroke.Transparency = 0.3
+	wait()
+	image.ImageTransparency = 0.2
+	text.TextTransparency = 0.2
+	stroke.Transparency = 0.2
+	wait()
+	image.ImageTransparency = 0.1
+	text.TextTransparency = 0.1
+	stroke.Transparency = 0.1
+	wait()
+	image.ImageTransparency = 0
+	text.TextTransparency = 0
+	stroke.Transparency = 0
+	end
+	wait(5)
+	image.ImageTransparency = 0
+	text.TextTransparency = 0
+	stroke.Transparency = 0
+	wait()
+	image.ImageTransparency = 0.1
+	text.TextTransparency = 0.1
+	stroke.Transparency = 0.1
+	wait()
+	image.ImageTransparency = 0.2
+	text.TextTransparency = 0.2
+	stroke.Transparency = 0.2
+	wait()
+	image.ImageTransparency = 0.3
+	text.TextTransparency = 0.3
+	stroke.Transparency = 0.3
+	wait()
+	image.ImageTransparency = 0.4
+	text.TextTransparency = 0.4
+	stroke.Transparency = 0.4
+	wait()
+	image.ImageTransparency = 0.5
+	text.TextTransparency = 0.5
+	stroke.Transparency = 0.5
+	wait()
+	image.ImageTransparency = 0.6
+	text.TextTransparency = 0.6
+	stroke.Transparency = 0.6
+	wait()
+	image.ImageTransparency = 0.7
+	text.TextTransparency = 0.7
+	stroke.Transparency = 0.7
+	wait()
+	image.ImageTransparency = 0.8
+	text.TextTransparency = 0.8
+	stroke.Transparency = 0.8
+	wait()
+	image.ImageTransparency = 0.9
+	text.TextTransparency = 0.9
+	stroke.Transparency = 0.9
+	wait()
+	image.ImageTransparency = 1
+	text.TextTransparency = 1
+	stroke.Transparency = 1
+	image.Visible = false
+	frame.Visible = true
+	button.Visible = true
+	sound.Playing = false
+end;
+task.spawn(C_8b);
 
 return G2L["1"], require;
