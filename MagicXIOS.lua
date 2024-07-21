@@ -3,6 +3,7 @@ local G2L = {};
 
 -- StarterGui.MagicXIOSGui
 G2L["1"] = Instance.new("ScreenGui", game:GetService("Players").LocalPlayer:WaitForChild("PlayerGui"));
+G2L["1"]["DisplayOrder"] = 99999999;
 G2L["1"]["Name"] = [[MagicXIOSGui]];
 G2L["1"]["ZIndexBehavior"] = Enum.ZIndexBehavior.Sibling;
 G2L["1"]["ResetOnSpawn"] = false;
@@ -939,6 +940,7 @@ G2L["7f"]["Color"] = ColorSequence.new{ColorSequenceKeypoint.new(0.000, Color3.f
 G2L["80"] = Instance.new("ImageButton", G2L["1"]);
 G2L["80"]["BorderSizePixel"] = 0;
 G2L["80"]["BackgroundColor3"] = Color3.fromRGB(255, 255, 255);
+G2L["80"]["ZIndex"] = 9999999;
 G2L["80"]["Image"] = [[rbxassetid://18569866452]];
 G2L["80"]["Size"] = UDim2.new(0, 66, 0, 62);
 G2L["80"]["BackgroundTransparency"] = 1;
